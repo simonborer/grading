@@ -1,0 +1,105 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" type="text/javascript" src="grading.js"></script>
+    <style>
+    body {
+        font-family: sans-serif;
+    }
+
+    label {
+        display: inline-block;
+        margin-right: .5rem;
+    }
+
+    input[type="radio"] {
+        margin-right: .25rem;
+    }
+
+    details {
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px dashed;
+    }
+
+    #feedback {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .container {
+        max-width: 40rem;
+        margin: 0 auto;
+        line-height: 1.8;
+    }
+
+    .extra {
+        margin-left: 1rem;
+        line-height: 1.2;
+    }
+
+    .not-yet {
+        color: grey;
+    }
+
+    button,
+    select {
+        text-align: left;
+        border: 1px solid transparent;
+        padding: 12px 16px;
+        margin: 0 1rem 1rem 0;
+    }
+
+    button:hover {
+        cursor: pointer;
+        border: 1px dotted;
+    }
+
+    select {
+        background-color: #efefef;
+    }
+
+    #sampleFeedback {
+      border-bottom: 4px solid #efefef;
+    }
+
+    .assn-description {
+        font-size:  .8em;
+    }
+
+    .assn-link {
+        margin:  1em 0;
+        font-size:  .8em;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="controls">
+            <select name="" id="options">
+                <option value="">-- Choose an assignment</option>
+            </select>
+            <button id="reset">Reset</button>
+        </div>
+        <div id="container"></div>
+        <div id="sampleFeedback">
+            <h2>Sample Feedback</h2>
+            <ul id="feedback"></ul>
+        </div>
+        <div id="textOutput">
+            <div contenteditable="true">&nbsp;</div>
+            <div id="values" contenteditable="true">
+                <div id="affirmation"></div>
+                <div id="customFeedback"></div>
+                <div id="rubric"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
