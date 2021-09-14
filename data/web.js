@@ -1,6 +1,33 @@
 import { Qu } from './qu.js';
 
 const web = {
+    lab1: {
+        total: 8,
+        req: [
+            new Qu("Send me a codepen link, containing..."),
+            new Qu("...a write-up about what you learned, using..."),
+            new Qu("2 different kinds of headings,"),
+            new Qu("3 paragraphs,"),
+            new Qu("one link,"),
+            new Qu("bolded text,"),
+            new Qu("italic text, and"),
+            new Qu("one list.")
+        ],
+        fb: ["Just one thing - ", "A little feedback...",
+            "Attribute values (i.e. the url in an anchor tag's `href` attribute) need to be quoted with \"double quotes\".",
+            "Make sure all your tags are closed.",
+            "Review the meaning of numbers in heading tags (h1, h2, etc.). It's not the order that they come in, but the level of the heading (i.e. section, subsection, etc.).",
+            "HTML tags should be written in lowercase.",
+            "Make sure all your tags are paired up properly, and closed in the right order.",
+            "The `ul` tag is for a whole list, and the `li` tag is for each item within that list. One ul, many li's. (I notice you got this right the second time!)",
+            "You're missing a few things:",
+            "- a link (an 'anchor' tag),",
+            "- a second kind of heading (i.e. h2)",
+            "- a list (ul & li elements)",
+            "don't use empty elements - elements are there to describe content, and if there's no content, there's no point in describing it.",
+            "If you're not clear on these, please let me know."
+        ]
+    },
     lab3: {
         total: 4,
         req: [

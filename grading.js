@@ -1,6 +1,6 @@
-import { qa } from './data/qa.js';
+import { web } from './data/web.js';
 
-const dt = { qualityAssurance: qa };
+const dt = { web: web };
 
 const assnArray = [];
 
