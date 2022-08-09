@@ -1,6 +1,6 @@
-import { web } from './data/web.js';
+import { a11y } from './data/a11y.js';
 
-const dt = { web: web };
+const dt = { a11y: a11y };
 
 const assnArray = [];
 
@@ -161,9 +161,9 @@ const showGrades = function(assn) {
         });
     }
 
-    const button = document.getElementById("reset");
+    const resetButton = document.getElementById("reset");
 
-    button.addEventListener("click", (event) => {
+    resetButton.addEventListener("click", (event) => {
         var ele = document.querySelectorAll("input[type='radio']");
         for (var i = 0; i < ele.length; i++) {
             ele[i].checked = false;
@@ -171,6 +171,12 @@ const showGrades = function(assn) {
         affirmation.innerHTML = "";
         rubric.innerHTML = "";
         customFeedback.innerHTML = "";
+    });
+
+    const hardResetButton = document.getElementById("reset");
+
+    hardResetButton.addEventListener("click", (event) => {
+        localStorage.clear();
     });
 
 

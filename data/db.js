@@ -2,24 +2,21 @@ import { Qu } from './qu.js';
 
 const db = {
     proposal: {
-        total: 20,
+        total: 10,
         req: [
-            new Qu("Description of the problems you're solving.", 4),
-            new Qu("Normalized table architecture", 5 / 7),
-            new Qu("Column Names", 5 / 7),
-            new Qu("Data types", 5 / 7),
-            new Qu("Keys", 5 / 7),
-            new Qu("Constraints", 5 / 7),
-            new Qu("Referential actions", 5 / 7),
-            new Qu("Relationships between tables", 5 / 7),
-            new Qu("At least one function"),
-            new Qu("At least one procedure"),
-            new Qu("At least one trigger"),
-            new Qu("At least one view"),
-            new Qu(
-                "At least one table automatically logging changes to the database"),
-            new Qu("Justifications for the architecture and tools", 4),
-            new Qu("Reasonably estimated timeline", 2)
+            new Qu("Description of the problems you're solving.", 2.5),
+            new Qu("Normalized table architecture", .426),
+            new Qu("Column Names", .426),
+            new Qu("Data types", .426),
+            new Qu("Keys", .426),
+            new Qu("Constraints", .426),
+            new Qu("Referential actions", .425),
+            new Qu("Relationships between tables", .426),
+            new Qu("At least one function or procedure", 1 / 2),
+            new Qu("At least one view", 1 / 2),
+            new Qu("At least one table automatically logging changes to the database", 1 / 2),
+            new Qu("Justifications for the architecture and tools", 2.5),
+            new Qu("Reasonably estimated timeline", 1 / 2)
         ],
         fb: [
             'Set aside a moment to consider your "MVP" (the least you can get away with doing while still having something finished), and then plan to do that set of work first.',
@@ -27,26 +24,40 @@ const db = {
             "One thing that's incorrect here, and it's likely my fault for not explaining correctly, but referential actions are not just the foreign key relationship, but the actual actions defined that happen as a consequence, i.e. `ON DELETE CASCADE`."
         ]
     },
-    lab8: {
-        total: 5,
+    lab2: {
+        total: 4,
         req: [
-            new Qu("One query that can tell me the names and shifts of the librarians working not this coming Monday, but the Monday following.", 0.5),
-            new Qu("One query that can tell me Beverly Cleary's assignments for that day.", 0.5),
-            new Qu("Your tables duplicate data as little as possible.", 0.5),
-            new Qu("Your tables have no one-to-one relationships that you can't justify.", 0.5),
-            new Qu("Your tables have no many-to-many relationships that aren't mediated by a bridging table.", 0.5),
-            new Qu("Your tables have one table for each type of entity (person, place, thing, event).", 0.5),
-            new Qu("Your tables have one cell for 1 datum (piece of data).", 0.5),
-            new Qu("Your tables maintain referential integrity with keys.", 0.5),
-            new Qu("Your tables maintain data integrity with constraints and referential actions.", 0.5),
-            new Qu("Your tables maintain semantics with data types.", 0.5)
+        new Qu("Q1"),
+        new Qu("Q2"),
+        new Qu("Q3"),
+        new Qu("Q4"),
+        new Qu("Q5"),
+        new Qu("Q6"),
+        new Qu("Q7"),
+        new Qu("Q8")],
+        fb: []
+    },
+    lab8: {
+        total: 4,
+        req: [
+            new Qu("Your tables duplicate data as little as possible."),
+            new Qu("Your tables have no one-to-one relationships that you can't justify."),
+            new Qu("Your tables have no many-to-many relationships that aren't mediated by a bridging table."),
+            new Qu("Your tables have one table for each type of entity (person, place, thing, event)."),
+            new Qu("Your tables have one cell for 1 datum (piece of data)."),
+            new Qu("Your tables maintain referential integrity with keys."),
+            new Qu("Your tables maintain data integrity with constraints and referential actions."),
+            new Qu("Your tables maintain semantics with data types."),
+            new Qu("One query that can tell me the names and shifts of the librarians working not this coming Monday, but the Monday following."),
+            new Qu("One query that can tell me Beverly Cleary's assignments for that day.")
         ],
         fb: ["The main area of improvement would be the assignments table. Librarians are permanently associated with an assignment, but instead given different assignments from week to week. You could reduce repetition and better reflect the real world by referencing the assignments in the schedule table.",
-            "When selecting for a person, use their id rather than their name, as names change.",
+            "When selecting for a person, use their id rather than their name, as names change, or can be not unique.",
             "I think one could argue that since MySQL provides the DAYNAME() function, including the names of dates is superfluous",
             "There's an argument to be made that assignments are their own entity, and they should be contained in a separate fourth table to meet the requirements for 2NF",
             "I think there should be at least some appropriate referential actions.",
-            "1NF says we should break up lists of data - your assignment/role data looks like it could get broken up."
+            "1NF says we should break up lists of data - your assignment/role data looks like it could get broken up.",
+            "Your schedule table violates the first normal form by having two columns for identical/interchangeable data."
         ]
     },
     lab10: {

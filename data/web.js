@@ -14,12 +14,13 @@ const web = {
             new Qu("one list.")
         ],
         fb: ["Just one thing - ", "A little feedback...",
-            "Attribute values (i.e. the url in an anchor tag's `href` attribute) need to be quoted with \"double quotes\".",
-            "Make sure all your tags are closed.",
-            "Review the meaning of numbers in heading tags (h1, h2, etc.). It's not the order that they come in, but the level of the heading (i.e. section, subsection, etc.).",
+            "attribute values (i.e. the url in an anchor tag's `href` attribute) need to be quoted with \"double quotes\".",
+            "make sure all your tags are closed.",
+            "review the meaning of numbers in heading tags (h1, h2, etc.). It's not the order that they come in, but the level of the heading (i.e. section, subsection, etc.).",
             "HTML tags should be written in lowercase.",
-            "Make sure all your tags are paired up properly, and closed in the right order.",
-            "The `ul` tag is for a whole list, and the `li` tag is for each item within that list. One ul, many li's. (I notice you got this right the second time!)",
+            "I see you've got some familiarity with an older version of HTML. Make sure you're using HTML5 elements like we learn in class.",
+            "make sure all your tags are paired up properly, and closed in the right order.",
+            "the `ul` tag is for a whole list, and the `li` tag is for each item within that list. One ul (list), many li's (list items).",
             "You're missing a few things:",
             "- a link (an 'anchor' tag),",
             "- a second kind of heading (i.e. h2)",
@@ -28,20 +29,48 @@ const web = {
             "If you're not clear on these, please let me know."
         ]
     },
-    lab3: {
-        total: 4,
+    lab2: {
+        total: 8,
         req: [
-            new Qu("a class selector", 0.5),
-            new Qu("an id selector", 0.5),
-            new Qu("a sibling selector", 0.5),
-            new Qu("a child selector", 0.5),
-            new Qu("centred text", 0.5),
-            new Qu("a hex code", 0.5),
-            new Qu("a font-size", 0.5),
-            new Qu("one style that gets overridden by another", 0.5)
+            new Qu("Create a document with extension '.html'"),
+            new Qu("Add a doctype declaration"),
+            new Qu("Add an html element (with the required attribute!)"),
+            new Qu("Inside your html element, add a head element, and a body element."),
+            new Qu("Inside your head element, add a title and the charset."),
+            new Qu("Inside your body element, add a header, main, and footer."),
+            new Qu("Inside the header, add the document's title. What's a good element for that?"),
+            new Qu("Also inside the header, add an image that might work as your 'hero' image. Don't worry about copyright attribution for now. Just make sure to add appropriate alternative text."),
+            new Qu("Inside your main, create a table called 'favourites'. Put some of your favourite things in the table. Make sure to give your columns the appropriate headings. Throw an inline element in there while you're at it."),
+            new Qu("Inside the foot, put the copyright symbol, the current year, and your name."),
+        ],
+        fb: ["Just one thing - ", "A little feedback...",
+            "attribute values (i.e. the url in an anchor tag's `href` attribute) need to be quoted with \"double quotes\".",
+            "make sure all your tags are closed.",
+            "review the meaning of numbers in heading tags (h1, h2, etc.). It's not the order that they come in, but the level of the heading (i.e. section, subsection, etc.).",
+            "HTML tags should be written in lowercase.",
+            "I see you've got some familiarity with an older version of HTML. Make sure you're using HTML5 elements like we learn in class.",
+            "make sure all your tags are paired up properly, and closed in the right order.",
+            "The head and the header are very different things. Make sure you know which one's which.",
+            "You've got kind of a mish-mash of a table and list going. They can't really be combined.",
+            "caption goes inside the table.",
+            "You're missing a few things:",
+            "If you're not clear on these, please let me know."
         ]
     },
-    lab4: {
+    lab3: {
+        total: 8,
+        req: [
+            new Qu("a class selector"),
+            new Qu("an id selector"),
+            new Qu("a sibling selector"),
+            new Qu("a child selector"),
+            new Qu("centred text"),
+            new Qu("a hex code"),
+            new Qu("a font-size"),
+            new Qu("one style that gets overridden by another")
+        ],
+        fb: ["Good work! It's clear you've got the core concepts down. You've missed some of the requirements, but you're making good progress! Feel free to let me know if there's anything in particular you'd like help getting a handle on.", "Make sure your curly braces are closed properly.", "Have another look at how sibling selectors work: https://webintro2021.ca/posts/the-3rd-week/#groupingSelectors", "As I mentioned in class, when you write HTML in CodePen, it has already created the document for you, and you are writing inside a 'body' element."]
+    }, lab4: {
         total: 4,
         req: [
             new Qu(
@@ -53,8 +82,7 @@ const web = {
             new Qu(
                 "Section content: A paragraph, including text, and at least one anchor tag.",
                 1 / 3,
-                "extra"
-            ),
+                "extra"),
             new Qu(
                 "Using an external stylesheet, give different :hover styles to your navigation links and the links in your page content.", 1)
         ],
@@ -63,89 +91,50 @@ const web = {
     assn1: {
         total: 10,
         req: [
-            new Qu(
-                "Submit one html file, and one css file, zipped in a folder."),
-            new Qu(
-                "Make sure all your HTML and CSS is valid according to the W3C."),
-            new Qu("All your HTML must be semantically correct."),
-            new Qu("Your CSS must be coded mobile-first."),
+            new Qu("Submit one html file, and one css file, zipped in a folder.",1),
+            new Qu("Make sure all your HTML and CSS is valid according to the W3C.",1),
+            new Qu("All your HTML must be semantically correct.",1),
+            new Qu("Your CSS must be coded mobile-first.",1),
             new Qu("include a header image", 0.5, "extra"),
-            new Qu(
-                "include a page title with a different font-family than the body font.",
-                0.5,
-                "extra"
-            ),
+            new Qu("include a page title with a different font-family than the body font.", 0.5, "extra"),
             new Qu("include in-page navigation", 0.5, "extra"),
-            new Qu(
-                "include three or more sections of content (with section titles where appropriate).",
-                0.5,
-                "extra"
-            ),
-            new Qu(
-                "include enough content that the page extends past the bottom of the viewport.",
-                0.5,
-                "extra"
-            ),
-            new Qu(
-                'include a "back to top" button that remains in the bottom-right of the viewport that returns the user to the top of the page.',
-                0.5,
-                "extra"
-            ),
-            new Qu(
-                "include at least two images in the page content, at least one floated to the right, and at least one floated to the left.",
-                0.5,
-                "extra"
-            ),
-            new Qu(
-                "include appropriate padding/margin around elements to make things pleasant to read.",
-                0.5,
-                "extra"
-            ),
-            new Qu(
-                "include a different colour scheme on desktop and mobile.",
-                0.5,
-                "extra"
-            ),
-            new Qu(
-                "include one word in the body content, not contained in a link, that changes style when hovered over.",
-                0.5,
-                "extra"
-            ),
-            new Qu("Add a bit of personal style.")
-        ]
+            new Qu("include three or more sections of content (with section titles where appropriate).",0.5,"extra"),
+            new Qu("include enough content that the page extends past the bottom of the viewport.",0.5,"extra"),
+            new Qu('include a "back to top" button that remains in the bottom-right of the viewport that returns the user to the top of the page.',0.5,"extra"),
+            new Qu("include at least two images in the page content, at least one floated to the right, and at least one floated to the left.",0.5,"extra"),
+            new Qu("include appropriate padding/margin around elements to make things pleasant to read.",0.5,"extra"),
+            new Qu("include a different colour scheme on desktop and mobile.",0.5,"extra"),
+            new Qu("include one word in the body content, not contained in a link, that changes style when hovered over.",0.5,"extra"),
+            new Qu("Add a bit of personal style.",1)
+        ],
+        fb: ["A few issues that I think could've been resolved if you validated your HTML & CSS."]
     },
     lab6: {
         total: 4,
         req: [
             new Qu("Code should be semantic and validate.", 3 / 5),
-            new Qu(
-                "On larger screens, the content of the page should not take up the full width of the viewport, but instead occupy a centred column.",
+            new Qu("On larger screens, the content of the page should not take up the full width of the viewport, but instead occupy a centred column.",
                 3 / 5
             ),
-            new Qu(
-                "Interactive elements (such as buttons and/or links) should give the user custom feedback when the state changes, using pseudoclass selectors.",
+            new Qu("Interactive elements (such as buttons and/or links) should give the user custom feedback when the state changes, using pseudoclass selectors.",
                 3 / 5
             ),
-            new Qu(
-                "Content should include a distinct header, footer and main, with images and text.",
+            new Qu("Content should include a distinct header, footer and main, with images and text.",
                 3 / 5
             ),
             new Qu(
                 'At least one section should have multiple columns that at side-by-each on desktop and "stacked" into a single column on mobile.',
                 3 / 5
             ),
-            new Qu(
-                "The page should have some style, such as a consistent color palette (you can generate one if you like).",
+            new Qu("The page should have some style, such as a consistent color palette (you can generate one if you like).",
                 1 / 5
             ),
             new Qu("Load Normalize via CDN.", 1 / 5),
             new Qu("Images should be loaded from a local folder.", 1 / 5),
-            new Qu(
-                "In at least one instance, the flex order should change based on a media query.",
+            new Qu("In at least one instance, the flex order should change based on a media query.",
                 1 / 5
             ),
-            new Qu(
-                "Paragraph text should not exceed 60 characters in width.",
+            new Qu("Paragraph text should not exceed 60 characters in width.",
                 1 / 5
             )
         ]
@@ -171,6 +160,15 @@ const web = {
         ],
         fb: []
     },
+    lab9: {
+        total: 8,
+        req: [
+            new Qu("You submitted a url that leads to your website", 3.5),
+            new Qu("Your website has 3 pages I can find easily", 3.5),
+            new Qu("Your website has a good reason to have a PNG, a JPEG, and a background image.", 1),
+            new Qu("Submitted after 19/11", -0.5)
+        ]
+    },
     lab10: {
         total: 4,
         req: [new Qu("A homepage, an \"About\" page, and a \"Contact\" page, all accessible from every other page (i.e. in the menu).", 4 / 3), new Qu("Relevant content on each of the pages. Simple is fine.", 4 / 3), new Qu("No lorem ipsum or default images.", 4 / 3)]
@@ -178,16 +176,16 @@ const web = {
     assn2: {
         total: 20,
         req: [
-            new Qu("Post 1", 2),
-            new Qu("Post 2", 2),
-            new Qu("Post 3", 2),
-            new Qu("Post 4", 2),
-            new Qu("Post 5", 2),
-            new Qu("SyntaxHighlighter Code block", 2),
-            new Qu("Custom HTML block to render your own code.", 2),
-            new Qu("Custom HTML block to embed one example of your work from codePen.", 2),
-            new Qu("A screenshot of a webpage you coded.", 2),
-            new Qu("The Quote block, featuring a quote from the notes, and a link not only to the page, but the page section where the quote appears.", 2)
+            new Qu("Post 1", 3),
+            new Qu("Post 2", 3),
+            new Qu("Post 3", 3),
+            new Qu("Post 4", 3),
+            new Qu("Post 5", 3),
+            new Qu("SyntaxHighlighter Code block",1.25),
+            new Qu("Custom HTML block to render your own code, or to embed one example of your work from codePen.", 1.25),
+            new Qu("A screenshot of a webpage you coded.", 1.25),
+            new Qu("The Quote block, featuring a quote from the notes, and a link not only to the page, but the page section where the quote appears.", 1.25),
+            new Qu("Late marks deducted? (☒ = No, no marks were deducted; ☑ = Yes, late marks were taken off)", -2)
         ],
         fb: ["Loved reading your posts.", "The main thing with this assignment was to put your writing in separate portfolio posts"]
     },
@@ -204,7 +202,7 @@ const web = {
             new Qu("Basic optimization stuff: are there images that could be resized or compressed? Are there images or video in the wrong format?", 0.5),
             new Qu("Aesthetic feedback. Okay, this one's tricky: make sure any aesthetic feedback is not negative and is not vague. Give actionable suggestions for things you might prefer.", 0.5)
         ],
-        fb: ["Leaving a section blank doesn't tell your partner that things are okay, it just makes them wonder if any testing was done. Telling someone what tests they passed is as important as telling them what needs improvement.", "Seems like there may be a little confusion about the meaning of different feedback categories.", "feedback was supposed to be done per page", "little information is given about how you know things are okay, which may undermine your partner's confidence in your conclusions", "As discussed in class, Lighthouse is not a replacement for manual accessibility testing", "if you'd delivered this as feedback per page, rather than as a whole, it would create more confidence that all aspects had been tested. Knowing what has passed inspection is nearly as important as knowing what failed.", "As mentioned, the emphasis is on actionable feedback - anyone can run a lighthouse audit in a few seconds, but knowing what can be improved and how to improve it is where you give your partner real help.", "I'd suggest working on your spreadsheet formatting (providing feedback per page can help your partner a great deal while they're going through and fixing stuff)."]
+        fb: ["Optimization =/= appearance","Leaving a section blank doesn't tell your partner that things are okay, it just makes them wonder if any testing was done. Telling someone what tests they passed is as important as telling them what needs improvement.", "Seems like there may be a little confusion about the meaning of different feedback categories.", "feedback was supposed to be done per page", "little information is given about how you know things are okay, which may undermine your partner's confidence in your conclusions", "As discussed in class, Lighthouse is not a replacement for manual accessibility testing", "if you'd delivered this as feedback per page, rather than as a whole, it would create more confidence that all aspects had been tested. Knowing what has passed inspection is nearly as important as knowing what failed.", "As mentioned, the emphasis is on actionable feedback - anyone can run a lighthouse audit in a few seconds, but knowing what can be improved and how to improve it is where you give your partner real help.", "I'd suggest working on your spreadsheet formatting (providing feedback per page can help your partner a great deal while they're going through and fixing stuff)."]
     },
     finalPt2: {
         total: 12,
