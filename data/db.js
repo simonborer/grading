@@ -1,4 +1,4 @@
-import { Qu } from './qu.js';
+ import { Qu } from './qu.js';
 
 const db = {
     proposal: {
@@ -21,6 +21,9 @@ const db = {
         fb: [
             'Set aside a moment to consider your "MVP" (the least you can get away with doing while still having something finished), and then plan to do that set of work first.',
             "I'm also thinking that your function could simply be a view that leverages COUNT(). Maybe consider something a little better suited to a custom function.",
+            "UNIQUE and NOT NULL are redundant for primary keys",
+            "In your function, how are you going to define the start date of the two-week period? For example, if I am scheduled to work 44 hours each Week 3 and Week 4, can I still add hours for Week 2?",
+            "Where will your triggers log data?",
             "One thing that's incorrect here, and it's likely my fault for not explaining correctly, but referential actions are not just the foreign key relationship, but the actual actions defined that happen as a consequence, i.e. `ON DELETE CASCADE`."
         ]
     },
@@ -35,7 +38,42 @@ const db = {
         new Qu("Q6"),
         new Qu("Q7"),
         new Qu("Q8")],
-        fb: []
+        fb: ["Semicolons (;) tell the computer \"this query is over\", so they can only come at the very end of your statements.", "The \"greater than or equal to\" symbol is >=.", "Highest to lowest means descending (DESC).", "To check if there's a billing state listed, we'd write billingState IS NOT NULL.", "Regarding Q1: It seems like you forgot to add the clause 'billingstate IS NOT NULL'", "Regarding Q1: I think the operator you want is 'greater than or equal to', written >=", "Re Q2: you've sorted from youngest to oldest.", "What about this part? `Exclude the two oldest.`", "Regarding Q3: I'm not sure why you added the clause 'company IS NOT NULL'. If you have questions about the meaning of data, feel free to bring that up.", "Q3: The distinct keyword can only go inside COUNT(), and no other functions (i.e. LOWER)", "Q3: No marks taken off for this, but I think you've misunderstood the data a little. Whether or not the customer has a company listed doesn't determine whether or not they're a customer.", " Regarding Q4: What about the first name?", "Regarding Q4: Note that you have to specify one column per clause. Check your data - are there any rows where the firstname has a 't', but the lastname does not?", "Regarding Q4: You'll want to use the SUBSTR function to include a column that lists the third letter of the last name. For the WHERE clause, remember that for every condition you need to restate the column name, so for this we would write WHERE firstname LIKE '%t%' OR lastname LIKE '%t%'", "Regarding Q4, the LIKE clause is case insensitive, so you don't need to check for both 't', and 'T', but regardless, you can't chain together clauses this way - you need to test one column against one clause, and then chain these pairings together with AND or OR, so instead of `firstname OR lastname LIKE '%t%' OR '%T%'`, you'd need to write `firstname LIKE '%t%' OR firstname LIKE '%T% OR lastname LIKE '%t%' OR lastname LIKE '%T%'", "Regarding Q5: Strange that your assignment has a question mark (?) instead of a ö (an o with an ülaut). Is this something to do with your computer, or perhaps the font you're using?", "Re Q5: Looks like you forgot to filter out the rows that don't contain a ö", "Regarding Q6: It seems like you've confused the syntax for COALESCE with the syntax for the REPLACE function. I think you need to decide how you're going to approach verifying your results. ", "Regarding Q6: Be careful! A space is not the same thing as an empty string. Also, just as in question 4, for the WHERE clause, remember that for every condition you need to restate the column name, so this needs to be \"WHERE state IS NULL OR fax IS NULL;\". However, the question should not be answered with this clause. You are to get ALL the results from the customer table. COALESCE will replace null values, but only if they are null.", "Regarding Q6: Unfortunately COALESCE doesn't accept a list of columns, so you have to write the function for each column that you want to affect, like so: \"SELECT customerID, COALESCE(state, ''), COALESCE(fax, '')\"", "Re Q6: The COALESCE function only accepts two parameters - the input data and the output. NULL is implied. Also, be careful - whitespace is not the same as an empty string.", "Regarding Q7: Take a look at the SUBSTR function and the > operator - these are what your answer is missing.", "Regarding Q7: The SUBSTR function starts counting characters at the value '1', so your function is only selecting 19 characters. For your WHERE clause, I believe you meant to use the LENGTH function to get the total number of characters in the title.", "Re Q7: You need to use the substring function in your list of selected columns to return the truncated title. Also, the extra functions (upper and substr) in your where clause don't do anything because they're not being compared to anything.", "Regarding Q8: This works, but repetition not only means extra work, both now and when maintaining the code, but also more opportunities for mistakes. To make your code more concise, you could use parentheses, and write your clause as \"WHERE (billingCity = 'Berlin' OR billingCity = 'Toronto') AND total > 5\", or simply use a list: \"WHERE billingCity IN ('Berlin', 'Toronto') AND total > 5\".", "Regarding Q8: You were very close! Rather than using the LIKE operator (which matches a pattern), you could've used IN (which checks against a list), or the \"equals\" operator (and appropriate parentheses), like this: \"WHERE (billingCity = 'Berlin' OR billingCity = 'Toronto') AND total > 5\"", "Re Q8: Your query selects all the invoices from Berlin, regardless of the value in the total column. You need to use parentheses to group clauses, or use a clause that can capture both cities, like IN"
+]
+    },
+    lab3: {
+        total: 4,
+        req: [
+        new Qu("Q1", 4 / 9),
+        new Qu("Q2", 4 / 9),
+        new Qu("Q3", 4 / 9),
+        new Qu("Q4", 4 / 9),
+        new Qu("Q5", 4 / 9),
+        new Qu("Q6", 4 / 9),
+        new Qu("Q7", 4 / 9),
+        new Qu("Q8", 4 / 9),
+        new Qu("Q9", 4 / 9),
+        new Qu("Q10 (Bonus)"), 4 / 9],
+        fb: [
+            {    
+                assoc: "0",
+                text: "Occurrence_Year % 2 = 0 means Occurrence_Year is divisible by 2 with no remainder, so this returns odd years. Don't forget to check your results table to see if you're getting what you expect."}, 
+            "\"Occurrence_Year % 2\" returns a value, not a condition. I think what you're looking for is \"Occurrence_Year % 2 = 1\"", "Seems like you didn't address 'Format this result as a dollar figure (include the dollar sign, and don't show fractions of a cent).'", "Why exclude bikes based on their status?", "Look at CONCAT to format with the dollar sign.", "SUBSTR only works here because the returned number is (barely) less than $1000. If you use ROUND() to round off the number to two decimal places, you can keep using your query regardless of the amount.", "If you coalesce null values to 0 in this case, I think you're misrepresenting the data by bringing down the average price when in fact we should only calculate the average based on known values, and exclude the unknown. If a $1000 bike gets stolen, the fact that the value wasn't recorded doesn't make it worthless."]
+    },
+    lab5: {
+        total: 4,
+        req: [
+        new Qu("Q1"),
+        new Qu("Q2"),
+        new Qu("Q3"),
+        new Qu("Q4"),
+        new Qu("Q5"),
+        new Qu("Q6"),
+        new Qu("Q7"),
+        new Qu("Q8"),
+        new Qu("Q9"),
+        new Qu("Q10")],
+        fb: ["Q1: You missed a book (the one without an author listed). You'd need to use a left join with both tables (or reorder the tables and use a single right join).", "Q2: WHERE clause is a little overcomplicated", "Q2: Don't hard-code when you can select real data","Q2: Where's the title?", "Q3: Don't use HAVING when you can use WHERE","Q3: Where's the rest of the American authors?","Q4: Why not use the MONTH() function?","Q4: Don't use LIKE when you mean equals","Q5: Don't use GROUP BY to replace DISTINCT", "Q7: Use the primary key by default","Q10: Where's the self-join?", "Q10: This is just a list of first names, not a list of people"]
     },
     lab8: {
         total: 4,

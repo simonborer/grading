@@ -1,6 +1,6 @@
-import { a11y } from './data/a11y.js';
+import { web } from './data/web.js';
 
-const dt = { a11y: a11y };
+const dt = { web: web };
 
 const assnArray = [];
 
@@ -42,7 +42,7 @@ const showGrades = function(assn) {
     	feedbackSection.style.display = 'block';
         feedback.innerHTML = "";
 	    standardFeedback.forEach((f) => {
-	        feedback.innerHTML += "<li><button class='fdbk'>" + f + "</button></li>";
+            feedback.innerHTML += `<li><button class='fdbk'${f.assoc ? ` data-assoc='${f.assoc}'` : ``}>${f.text ? f.text : f}</button></li>`;
 	    });
     }
 
@@ -66,25 +66,14 @@ const showGrades = function(assn) {
         divClass,
         baseVal = total / requirements.length
     ) {
-        var halfVal = baseVal / 2;
-        var str =
-            '<div id="' +
-            name +
-            '" class="radio-group ' +
-            divClass +
-            '"><label><input type="radio" name="' +
-            name +
-            '" value="' +
-            baseVal +
-            '">☑</label><label><input type="radio" name="' +
-            name +
-            '" value="' +
-            halfVal +
-            '">½</label><label><input type="radio" name="' +
-            name +
-            '" value="0">☒</label>&nbsp;<span class="description">' +
-            req +
-            "</span></div>";
+        var str = `<div id="${name}" class="radio-group">
+    <label><input type="radio" name="${name}" value="${baseVal}">☑</label>
+    <label><input type="radio" name="${name}" value="${baseVal * .75}">¾</label>
+    <label><input type="radio" name="${name}" value="${baseVal / 2}"">½</label>
+    <label><input type="radio" name="${name}" value="${baseVal * .25}">¼</label>
+    <label><input type="radio" name="${name}" value="0">☒</label>
+    &nbsp;<span class="description">${req}</span>
+</div>`;
         return str;
     };
 
@@ -122,6 +111,9 @@ const showGrades = function(assn) {
             var targ = document.querySelector('input[name="' + rad + '"]:checked');
             if (targ !== null) {
                 runningTotal += parseFloat(parseFloat(targ.value).toFixed(2));
+                // Okay so I was working on categorizing the feedback by question... but that's gonna take a minute. This thing was to hide feedback if the question was answered perfectly or not at all.
+                // const parentLabels = document.getElementById(rad).getElementsByTagName('label');
+                // const firstOrLast = targ.parentElement === parentLabels[0] || targ.parentElement === parentLabels[parentLabels.length - 1];
             }
         });
 

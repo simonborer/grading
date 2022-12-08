@@ -70,7 +70,8 @@ const web = {
             new Qu("one style that gets overridden by another")
         ],
         fb: ["Good work! It's clear you've got the core concepts down. You've missed some of the requirements, but you're making good progress! Feel free to let me know if there's anything in particular you'd like help getting a handle on.", "Make sure your curly braces are closed properly.", "Have another look at how sibling selectors work: https://webintro2021.ca/posts/the-3rd-week/#groupingSelectors", "As I mentioned in class, when you write HTML in CodePen, it has already created the document for you, and you are writing inside a 'body' element."]
-    }, lab4: {
+    }, 
+    lab4: {
         total: 4,
         req: [
             new Qu(
@@ -137,7 +138,8 @@ const web = {
             new Qu("Paragraph text should not exceed 60 characters in width.",
                 1 / 5
             )
-        ]
+        ],
+        fb: []
     },
     lab7: {
         total: 4,
@@ -146,7 +148,8 @@ const web = {
             new Qu("In writing, define two possible user types for this website, and their different goals while using the website."),
             new Qu("Describe the individual steps (clicks, navigation, form fields, etc.) that they would have to take to achieve (one of) their goals."),
             new Qu("Does anything occur to you that could make things easier for them, that is achievable by the website's team? What is it? Or, if you can't think of anything, what designs or features are already in place that make those goals easy to achieve?")
-        ]
+        ],
+        fb: []
     },
     lab8: {
         total: 4,
@@ -163,15 +166,17 @@ const web = {
     lab9: {
         total: 8,
         req: [
-            new Qu("You submitted a url that leads to your website", 3.5),
-            new Qu("Your website has 3 pages I can find easily", 3.5),
+            new Qu("You submitted a url that leads to your website", 5),
+            new Qu("Your website has 3 pages I can find easily", 2),
             new Qu("Your website has a good reason to have a PNG, a JPEG, and a background image.", 1),
-            new Qu("Submitted after 19/11", -0.5)
-        ]
+            new Qu("Late marks deducted? (☒ = No, no marks were deducted; ☑ = Yes, late marks were taken off)", -0.5)
+        ],
+        fb: ["Your site isn't there? I'm giving you a few marks on the assumption that, since you have a customized URL, you probably did make a site, but I can't see it. Re-submit with your github repo and I can tell you how to fix and up your grade."]
     },
     lab10: {
         total: 4,
-        req: [new Qu("A homepage, an \"About\" page, and a \"Contact\" page, all accessible from every other page (i.e. in the menu).", 4 / 3), new Qu("Relevant content on each of the pages. Simple is fine.", 4 / 3), new Qu("No lorem ipsum or default images.", 4 / 3)]
+        req: [new Qu("A homepage, an \"About\" page, and a \"Contact\" page, all accessible from every other page (i.e. in the menu).", 4 / 3), new Qu("Relevant content on each of the pages. Simple is fine.", 4 / 3), new Qu("No lorem ipsum or default images.", 4 / 3)],
+        fb: []
     },
     assn2: {
         total: 20,

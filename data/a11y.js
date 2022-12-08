@@ -105,7 +105,7 @@ const a11y = {
             new Qu("Written: Reasonable recommendations", 5 / 4),
             new Qu("Written: Documentation", 20 / 4),
             new Qu("BONUS: Asked some good questions.", 3 / 4)],
-        fb: ["The maximum presentation time was 5 minutes", "You could've focussed your presentation more on what can be done, and less on the particular details of how you conducted the tests that lead to those conclusions - that's what the report and documentation is for.", "I would've liked to see you make your recommendations more usable - prioritizing, and giving recommendations on implementation including effort and impact.", "Sharing your camera and actually showing the application made your presentation much stronger than a simple slideshow."]
+        fb: ["The maximum presentation time was 5 minutes", "You could've focussed your presentation more on what can be done, and less on the particular details of how you conducted the tests that lead to those conclusions - that's what the report and documentation is for.", "I would've liked to see you make your recommendations more usable - prioritizing, and giving recommendations on implementation including effort and impact.", "Sharing your camera and actually showing the application made your presentation much stronger than a simple slideshow.", "High rates of successful goal completion is usually an indication that the test wasn't calibrated optimally to find improvements."]
     }
 };
 
