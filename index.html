@@ -102,7 +102,7 @@
         </div>
     </div>
     <script type="text/javascript">class Qu {
-    constructor(e, t, o) { this.q = e, this.val = t, this.class = o ? ? "" }
+    constructor(e, t, o) { this.q = e, this.val = t, this.class = o ?? "" }
 }
 const web = {
         lab1: {
@@ -482,7 +482,7 @@ const showGrades = function(e) {
     a.forEach((e, t) => {
         if ("object" == typeof e) {
             var o, a, i = (o = e.q, a = t, o.substr(0, o.indexOf(" ")) + a);
-            e.val ? container.innerHTML += n(i, e.q, e.class ? ? "", e.val) : container.innerHTML += n(i, e.q)
+            e.val ? container.innerHTML += n(i, e.q, e.class ?? "", e.val) : container.innerHTML += n(i, e.q)
         }
     });
     let i = document.querySelectorAll("input");
